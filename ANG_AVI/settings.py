@@ -135,3 +135,14 @@ EMAIL_HOST_PASSWORD = "yilc ubyy hntw yqsy"
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER 
 
+import os
+
+STATIC_URL = '/static/'
+
+# Dossier où collectstatic copiera tous les fichiers statiques
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Facultatif : dossiers de fichiers statiques supplémentaires
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
