@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Backend',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'ANG_AVI.urls'
@@ -69,6 +71,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ANG_AVI.wsgi.application'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Database
@@ -130,19 +137,16 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = "sallayama.th10@gmail.com"
-EMAIL_HOST_PASSWORD = "yilc ubyy hntw yqsy"
+EMAIL_HOST_USER = "adamanekhguinaravi00@gmail.com"
+EMAIL_HOST_PASSWORD = "eyjv ukgi ehxe puio"
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER 
 
 import os
 
 STATIC_URL = '/static/'
+DEBUG = False
+ALLOWED_HOSTS = ["angavi.onrender.com", "localhost"]
 
-# Dossier où collectstatic copiera tous les fichiers statiques
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Facultatif : dossiers de fichiers statiques supplémentaires
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+
