@@ -19,7 +19,7 @@ def send_contact_email(request):
             subject=subject,
             body=full_message,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            to=['adamanekhguinaravi00@gmail.com'],
+            to=[settings.DEFAULT_FROM_EMAIL],
             reply_to=[email] if email else None
         )
 
