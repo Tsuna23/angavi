@@ -36,7 +36,7 @@ def send_contact_email(request):
             
             # ✅ UTILISER L'API SENDGRID (pas SMTP !)
             # Récupérer la clé API depuis les variables d'environnement
-            sg_api_key = os.environ.get('SENDGRID_API_KEY')
+            sg_api_key = os.environ.get('EMAIL_HOST_PASSWORD')  # ou 'SENDGRID_API_KEY'
             
             if not sg_api_key:
                 # Fallback : utiliser EMAIL_HOST_PASSWORD si SENDGRID_API_KEY n'existe pas
